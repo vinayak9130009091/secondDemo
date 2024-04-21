@@ -16,6 +16,7 @@ import { LiaFileInvoiceSolid } from "react-icons/lia";
 import { BsMicrosoftTeams } from "react-icons/bs";
 import { GiRadialBalance } from "react-icons/gi";
 import { TbSettings } from "react-icons/tb";
+import { BiCaretRight } from "react-icons/bi";
 
 const SidebarItems = [
   {
@@ -37,12 +38,12 @@ const SidebarItems = [
       {
         title: "Accounts",
         path: "/accounts",
-        icon: <MdAccountBalance />,
+        icon: <BiCaretRight />,
       },
       {
         title: "Contacts",
         path: "/contacts",
-        icon: <IoIosContacts />,
+        icon: <BiCaretRight />,
       },
     ],
   },
@@ -52,29 +53,15 @@ const SidebarItems = [
     subNavOpen: false,
     subNav: [
       {
-        title: "Tasks",
-        path: "/marketplace",
-        icon: <FcParallelTasks />,
-      },
-      {
         title: "Jobs",
         path: "/firmtemplates",
-        icon: <FiHome />,
+        icon: <BiCaretRight />,
       },
-      {
-        title: "Jobrecurrences",
-        path: "/tags",
-        icon: <FiHome />,
-      },
+
       {
         title: "Pipelines",
-        path: "/services",
-        icon: <FiHome />,
-      },
-      {
-        title: "Calendar",
-        path: "/customfields",
-        icon: <SlCalender />,
+        path: "/pipeline",
+        icon: <BiCaretRight />,
       },
     ],
   },
@@ -86,50 +73,12 @@ const SidebarItems = [
       {
         title: "Clientsdocs",
         path: "/submenu1",
-        icon: <IoDocumentAttachSharp />,
+        icon: <BiCaretRight />,
       },
       {
         title: "Wiki",
         path: "/submenu2",
-        icon: <FiHome />,
-      },
-    ],
-  },
-
-  {
-    title: "Billing", // Main menu item with submenus
-    icon: <MdOutlinePayments />,
-    subNavOpen: false,
-    subNav: [
-      {
-        title: "Invoices",
-        path: "/submenu1",
-        icon: <LiaFileInvoiceSolid />,
-      },
-      {
-        title: "Recurring invoices",
-        path: "/submenu2",
-        icon: <LiaFileInvoiceSolid />,
-      },
-      {
-        title: "Time entries",
-        path: "/submenu2",
-        icon: <FiHome />,
-      },
-      {
-        title: "WIP",
-        path: "/submenu2",
-        icon: <FiHome />,
-      },
-      {
-        title: "Personals & ELS",
-        path: "/submenu2",
-        icon: <FiHome />,
-      },
-      {
-        title: "Payments",
-        path: "/submenu2",
-        icon: <FaRegCreditCard />,
+        icon: <BiCaretRight />,
       },
     ],
   },
@@ -140,66 +89,31 @@ const SidebarItems = [
     subNavOpen: false,
     subNav: [
       {
-        title: "Market place",
-        path: "/submenu1",
-        icon: <SiCoinmarketcap />,
+        title: "Email ",
+        path: "/emailtemplate",
+        icon: <BiCaretRight />,
       },
       {
-        title: "Firm templates",
-        path: "/submenu2",
-        icon: <FiHome />,
+        title: "Folder ",
+        path: "/createFoldertemplate",
+        icon: <BiCaretRight />,
       },
+
       {
         title: "Tags",
         path: "/tags",
-        icon: <FaUserTag />,
+        icon: <BiCaretRight />,
       },
+
       {
-        title: "Services",
+        title: "Pipeline",
         path: "/submenu2",
-        icon: <MdOutlineMiscellaneousServices />,
+        icon: <BiCaretRight />,
       },
       {
-        title: "Custom fields",
+        title: "Job",
         path: "/submenu2",
-        icon: <FiHome />,
-      },
-    ],
-  },
-  {
-    title: "Settings", // Main menu item with submenus
-    icon: <IoSettingsOutline />,
-    subNavOpen: false,
-    subNav: [
-      {
-        title: "My account",
-        path: "/submenu1",
-        icon: <MdAccountBalance />,
-      },
-      {
-        title: "Firm settings",
-        path: "/submenu2",
-        icon: <TbSettings />,
-      },
-      {
-        title: "Integrations",
-        path: "/submenu2",
-        icon: <FiHome />,
-      },
-      {
-        title: "Teams & Plans",
-        path: "/submenu2",
-        icon: <BsMicrosoftTeams />,
-      },
-      {
-        title: "Firm balance",
-        path: "/submenu2",
-        icon: <GiRadialBalance />,
-      },
-      {
-        title: "Invoice",
-        path: "/submenu2",
-        icon: <LiaFileInvoiceSolid />,
+        icon: <BiCaretRight />,
       },
     ],
   },

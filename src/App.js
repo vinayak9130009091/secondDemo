@@ -14,7 +14,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import ContactTable from "./pages/ContactTable";
 import AdminSignup from "../src/pages/AdminSignUp";
-import FolderTemplate from "../src/pages/FolderTemplate";
+import Pipeline from "../src/pages/Pipeline";
+import CreateFolderTemplate from "../src/pages/CreateFolderTemplate";
+import Login from "../src/pages/AdminLogin";
+import Signup from "../src/pages/AdminSignUp";
 
 function App() {
   return (
@@ -23,14 +26,15 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="/tags" element={<Tagcreate />} />
-          <Route path="/tagtable" element={<TagTable />} />
           <Route path="/accounts" element={<AccountsData />} />
           <Route path="/contacts" element={<ContactTable />} />
-          <Route path="/FolderTemplate" element={<FolderTemplate />} />
-
+          <Route path="/createFoldertemplate" element={<CreateFolderTemplate />} />
+          <Route path="/pipeline" element={<Pipeline />} />
           <Route path="*" element={<NoPage />} />
-          {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
         </Route>
+        <Route path="login1" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
+        <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -37,7 +37,7 @@ function NewSidebar({ account, formclose, contact }) {
           <li className="side-link">
             <a href="#">
               <AiOutlineUser className="new-icon" />
-              <span class="text nav-text" onClick={() => account()}>
+              <span className="text nav-text" onClick={() => account()}>
                 Account
               </span>
             </a>
@@ -45,7 +45,7 @@ function NewSidebar({ account, formclose, contact }) {
           <li className="side-link">
             <a href="#">
               <SlEnvolope className="new-icon" />
-              <span class="text nav-text" onClick={() => contact()}>
+              <span className="text nav-text" onClick={() => contact()}>
                 Contact
               </span>
             </a>
@@ -54,82 +54,82 @@ function NewSidebar({ account, formclose, contact }) {
           <li className="side-link">
             <a href="#">
               <HiOutlineDocumentPlus className="new-icon" />
-              <span class="text nav-text">Document</span>
+              <span className="text nav-text">Document</span>
             </a>
           </li>
           <li className="side-link">
             <a href="#">
               <CgFolderAdd className="new-icon" />
-              <span class="text nav-text">Folder</span>
+              <span className="text nav-text">Folder</span>
             </a>
           </li>
           <li className="side-link">
             <a href="#">
               <GoBook className="new-icon" />
-              <span class="text nav-text">Page</span>
+              <span className="text nav-text">Page</span>
             </a>
           </li>
           <hr />
           <li className="side-link">
             <a href="#">
               <LiaFolderSolid className="new-icon" />
-              <span class="text nav-text">Proposal</span>
+              <span className="text nav-text">Proposal</span>
             </a>
           </li>
           <li className="side-link">
             <a href="#">
               <FaPaperPlane className="new-icon" />
-              <span class="text nav-text">Chat</span>
+              <span className="text nav-text">Chat</span>
             </a>
           </li>
           <li className="side-link">
             <a href="#">
               <CiMemoPad className="new-icon" />
-              <span class="text nav-text">Organizer</span>
+              <span className="text nav-text">Organizer</span>
             </a>
           </li>
           <hr />
           <li className="side-link">
             <a href="#">
               <VscNewFolder className="new-icon" />
-              <span class="text nav-text">Invoice</span>
+              <span className="text nav-text">Invoice</span>
             </a>
           </li>
           <li className="side-link">
             <a href="#">
               <RiBillLine className="new-icon" />
-              <span class="text nav-text">Payment</span>
+              <span className="text nav-text">Payment</span>
             </a>
           </li>
           <hr />
           <li className="side-link">
             <a href="#">
               <MdOutlineAlternateEmail className="new-icon" />
-              <span class="text nav-text">Email</span>
+              <span className="text nav-text">Email</span>
             </a>
           </li>
           <li className="side-link">
             <a href="#">
               <LuStickyNote className="new-icon" />
-              <span class="text nav-text">Note</span>
+              <span className="text nav-text">Note</span>
             </a>
           </li>
           <li className="side-link">
             <a href="#">
               <IoIosPaper className="new-icon" />
-              <span class="text nav-text">Task</span>
+              <span className="text nav-text">Task</span>
             </a>
           </li>
           <li className="side-link">
             <a href="#">
               <MdMoreTime className="new-icon" />
-              <span class="text nav-text">Time Entry</span>
+              <span className="text nav-text">Time Entry</span>
             </a>
           </li>
           <li className="side-link">
             <a href="#">
               <PiSuitcaseSimpleBold className="new-icon" />
-              <span class="text nav-text">Job</span>
+              <span className="text nav-text">Job</span>
             </a>
           </li>
         </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import logo from "./static/logo.png";
 import Select from "react-select";
 import "./adminSignup.css";
-// import "./signup.css";
+// ? import "./signup.css";
 //import "./static/confirmation.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";

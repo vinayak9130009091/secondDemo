@@ -221,7 +221,7 @@ function Contact({ handleContactClose }) {
 
   //Console Data ===================================================
 
-  console.log(combinedValues);
+  // console.log(combinedValues);
   // console.log(firstName);
   // console.log(lastName);
   // console.log(middleName);

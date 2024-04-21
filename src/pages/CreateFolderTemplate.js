@@ -6,48 +6,25 @@ import { FaRegFilePdf, FaRegImage } from "react-icons/fa6";
 import { PiMicrosoftWordLogoFill } from "react-icons/pi";
 import { AiFillFileUnknown } from "react-icons/ai";
 import { BsFiletypeXlsx } from "react-icons/bs";
-
 import { FcFolder } from "react-icons/fc";
 import { FcOpenedFolder } from "react-icons/fc";
-function FolderTemplate() {
+
+function App() {
   const [file, setFile] = useState(null);
+  const fetchFolderData = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/folders");
+      setFolderData(response.data);
+    } catch (error) {
+      console.error("Error fetching folder data:", error);
+    }
+  };
 
   useEffect(() => {
     // Fetch the list of folders and their files when the component mounts
-    const fetchFolderData = async () => {
-      try {
-        const response = await axios.get("http://localhost:5000/folders");
-        setFolderData(response.data);
-      } catch (error) {
-        console.error("Error fetching folder data:", error);
-      }
-    };
 
     fetchFolderData();
   }, []);
-
-  const handleFileChange = async (e, folder) => {
-    setFile(e.target.files[0]);
-    try {
-      const formData = new FormData();
-      formData.append("file", e.target.files[0]);
-
-      const response = await axios.post(`http://localhost:5000/upload/${folder}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
-      console.log("File uploaded successfully:", response.data);
-      // Provide user feedback for successful file upload
-      alert("File uploaded successfully!");
-      // You can update state or perform any other action here based on the response.
-    } catch (error) {
-      console.error("Error uploading file:", error);
-      // Provide user feedback for failed file upload
-      alert("Error uploading file. Please try again.");
-    }
-  };
 
   const [folderName, setFolderName] = useState("");
 
@@ -80,11 +57,35 @@ function FolderTemplate() {
   useEffect(() => {
     fetchAllFolders();
   }, []);
+
+  const handleFileUpload = async (e, folder) => {
+    setFile(e.target.files[0]);
+    const formData = new FormData();
+    formData.append("file", e.target.files[0]);
+    try {
+      const response = await axios.post(`http://localhost:5000/upload/${folder}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      console.log("File uploaded successfully:", response.data);
+
+      //alert("File uploaded successfully!");
+      fetchFolderData();
+    } catch (error) {
+      console.error("Error uploading file:", error);
+      // Provide user feedback for failed file upload
+      alert("Error uploading file. Please try again.");
+    }
+  };
+
   const handleDeleteFile = async (folder, file) => {
     try {
       await axios.delete(`http://localhost:5000/deleteFile/${folder}/${file}`);
       console.log("File deleted successfully");
       // You may want to update the state to reflect the changes immediately
+      fetchAllFolders();
     } catch (error) {
       console.error("Error deleting file:", error.response.data.error);
     }
@@ -265,7 +266,7 @@ function FolderTemplate() {
                         <label htmlFor="fileUpload" style={{ cursor: "pointer" }}>
                           Upload files
                         </label>
-                        <input type="file" id="fileUpload" onChange={(e) => handleFileChange(e, folder.folder)} style={{ display: "none" }} />
+                        <input type="file" id="fileUpload" onChange={(e) => handleFileUpload(e, folder.folder)} style={{ display: "none" }} />
                       </li>
                     </ul>
                   </div>
@@ -313,4 +314,4 @@ function FolderTemplate() {
   );
 }
 
-export default FolderTemplate;
+export default App;

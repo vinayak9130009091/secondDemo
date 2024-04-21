@@ -151,21 +151,6 @@ function CreateAccount({ handleAddAccount }) {
     }),
   };
 
-  // const handleTagChange = selectedOptions => {
-  //   setSelectedTags(selectedOptions);
-  //   const values = selectedOptions.map(option => option.value);
-  //   setSelectedValues(values); // Update selectedValues state
-  //   // console.log("Selected Tag Values:", values);
-  // };
-
-  // const handleTagChange = selectedOptions => {
-  //   setSelectedTags(selectedOptions);
-  //   const values = selectedOptions.map(option => option.value);
-  //   // Combine the selected values into a single string or array
-  //   setCombinedValues(values.join(',')); // You can choose any delimiter you want
-  //   console.log("Combined Values:", combinedValues);
-  // };
-
   const handleTagChange = (selectedOptions) => {
     setSelectedTags(selectedOptions);
 
@@ -219,17 +204,6 @@ function CreateAccount({ handleAddAccount }) {
       .catch((error) => console.error(error));
     //todo contact
   };
-
-  //fetchData check console
-  console.log(clientType);
-  console.log(accountName);
-  console.log(teamMember);
-  console.log(folderTemplate);
-
-  console.log(clientType);
-  console.log(accountName);
-  console.log(teamMember);
-  console.log(folderTemplate);
 
   const companysubmit = () => {
     const myHeaders = new Headers();
@@ -346,7 +320,7 @@ function CreateAccount({ handleAddAccount }) {
     window.location.reload();
   };
 
-  console.log(clientType);
+  //console.log(clientType);
   const renderCurrentStage = () => {
     switch (currentStage) {
       case 1:
@@ -367,14 +341,14 @@ function CreateAccount({ handleAddAccount }) {
                   <div className="account_subtype">
                     <div className="individual_subtype">
                       <label htmlFor="company_radio" style={{ fontSize: "14px", fontFamily: "sans-serif", marginLeft: "5px" }}>
-                        <input type="checkbox" checked={isIndividualEnabled} onChange={handleContentCheckboxChange} style={{ marginRight: "10px" }} />
+                        <input defaultChecked={true} type="checkbox" onChange={handleContentCheckboxChange} style={{ marginRight: "10px" }} />
                         Individual
                       </label>
                     </div>
 
                     <div className="company_subtype" style={{ marginLeft: "20px" }}>
                       <label htmlFor="company_radio" style={{ fontSize: "14px", fontFamily: "sans-serif", marginLeft: "10px" }}>
-                        <input type="checkbox" checked={isCompanyEnabled} onChange={handleCompanyCheckboxChange} style={{ marginRight: "10px" }} />
+                        <input defaultChecked={false} type="checkbox" onChange={handleCompanyCheckboxChange} style={{ marginRight: "10px" }} />
                         Company
                       </label>
                     </div>
@@ -716,11 +690,6 @@ function CreateAccount({ handleAddAccount }) {
       </div>
 
       {renderCurrentStage()}
-
-      {/* <div className="col-12">
-        {currentStage > 1 && <button onClick={prevStage}>Previous</button>}
-        {currentStage < 3 && <button onClick={nextStage}>Next</button>}
-      </div> */}
     </div>
   );
 }
